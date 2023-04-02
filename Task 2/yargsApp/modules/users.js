@@ -36,7 +36,7 @@ class User {
   };
 
   //start-task-two
-  
+
   static deleteAll = () =>{
     const allUsers = deal.readJsonData("data.json");
     allUsers.splice(0,allUsers.length)
@@ -55,12 +55,11 @@ class User {
   }
 
   static editUser = (argv) =>{
-    const userData = createObj(argv);
     const allUsers = deal.readJsonData("data.json");
     allUsers.forEach((e,i)=> {
-      if(e.id == argv.id){
-        allUsers[i] = userData
-        return allUsers[i]
+      if (e.id == argv.id) {
+        allUsers[i].age = argv.age;
+        return allUsers[i];
       }
     })
     deal.writeJsonData("data.json", allUsers);

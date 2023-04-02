@@ -43,9 +43,9 @@ yargs.command({
   command: "editUser",
   builder: {
     id: { demandOption: true },
-    name: { demandOption: true },
+    // name: { demandOption: true },
     age: { demandOption: true },
-    email: { demandOption: true },
+    // email: { demandOption: true },
   },
   handler: (argv) => user.editUser(argv),
 });

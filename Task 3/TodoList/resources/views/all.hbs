@@ -1,0 +1,57 @@
+{{>header}}
+{{>nav}}
+<section class="container p-3">
+  <h3>Search on todo list</h3>
+  <form action="/search/?{{search}}" class="d-flex mb-2" role="search" method="get">
+    <input class="form-control me-2" name="search" placeholder="Search"/>
+    <button class="btn btn-primary" type="submit">Search</button>
+  </form>
+</section>
+
+<section class="container my-5">
+  <h3>Todo List</h3>
+  <div class="d-flex justify-content-between mb-4">
+    <a href="/add" class="btn btn-primary">
+      Add Task
+    </a>
+    <a href="/delAll" class="btn btn-danger">
+      Delete All
+    </a>
+  </div>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Content</th>
+        <th>Due Date</th>
+        <th>Status</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#if hasData}}
+      {{#each allTasks}}
+      <tr>
+        <td>{{id}}</td>
+        <td>{{title}}</td>
+        <td>{{content}}</td>
+        <td>{{dueDate}}</td>
+        <td>{{status}}</td>
+        <td>
+          <a href="/single/{{id}}" class="btn btn-primary mx-3">Show</a>
+          <a href="/edit/{{id}}" class="btn btn-warning mx-3">Edit</a>
+          <a href="/status/{{id}}" class="btn btn-primary mx-3">Activate</a>
+          <a href="/del/{{id}}" class="btn btn-danger mx-3">Delete</a>
+        </td>
+      </tr>
+      {{/each}}
+      {{else}}
+      <tr>
+        <td colspan="5">No founded tasks yet</td>
+      </tr>
+      {{/if}}
+    </tbody>
+  </table>
+</section>
+{{>footer}}

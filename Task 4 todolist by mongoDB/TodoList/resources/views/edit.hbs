@@ -1,0 +1,27 @@
+{{>header}}
+{{>nav}}
+<section class="container my-5">
+  <h2>Update Todo List</h2>
+  <form action="/editTaskLogic/{{task.id}}">
+    <div class="mb-3">
+      <input name="title" class="form-control" placeholder="title"  value="{{task.title}}">
+    </div>
+    <div class="mb-3">
+      <input name="content" class="form-control" placeholder="content" value="{{task.content}}">
+    </div>
+    <div class="mb-3">
+      <input name="dueDate" class="form-control" placeholder="date" type="date" value="{{task.dueDate}}">
+    </div>
+    <div class="mb-3">
+      <select name="status" class="form-select">
+        <option value="Active">Active</option>
+        <option value="InActive" selected="selected">In Active</option>
+      </select>
+    </div>
+    <div class="mb-3">
+      <button class="btn btn-primary">Update</button>
+    </div>
+  </form>
+</section>
+
+{{>footer}}

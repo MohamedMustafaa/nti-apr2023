@@ -1,0 +1,347 @@
+{
+	"info": {
+		"_postman_id": "44212ac5-1c85-496c-a8ee-76a630796fcb",
+		"name": "1-Nti",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26060302"
+	},
+	"item": [
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "all users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}user/",
+							"host": [
+								"{{url}}user"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fname\":\"moooo\",\r\n    \"lname\":\"salah\",\r\n    \"age\":23,\r\n    \"email\":\"mohamed44@gmail.com\",\r\n    \"password\":\"123456\",\r\n    \"gender\":\"male\",\r\n    \"phone\": \"01112447361\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}user/register",
+							"host": [
+								"{{url}}user"
+							],
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"mohamed44@gmail.com\",\r\n    \"password\":\"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}user/login",
+							"host": [
+								"{{url}}user"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout user",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDQyYzMxMjNjM2Y4NjM4NzRkODcyZjgiLCJpYXQiOjE2ODIwOTY5Mjd9.ZzG96OUr9GlQ4VkY7XvRouqSPgcqmFrVg73lV9wk4ro",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}user/logout",
+							"host": [
+								"{{url}}user"
+							],
+							"path": [
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Items",
+			"item": [
+				{
+					"name": "create Item",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"iphone12\",\r\n    \"description\": \"mobile\",\r\n    \"category\": \"phone\",\r\n    \"price\": 100\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/product/items",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"product",
+								"items"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All Item",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/product/allItems",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"product",
+								"allItems"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "find items by id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDQyYzMxMjNjM2Y4NjM4NzRkODcyZjgiLCJpYXQiOjE2ODIwOTY5Nzd9.sOrrLykOfjlXrHDVKooDus4fun_t3PfqeClfzEB7TXM",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/product/findItems/6442cc87b1d69756de7a9634",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"product",
+								"findItems",
+								"6442cc87b1d69756de7a9634"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit items by id",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDQyYzMxMjNjM2Y4NjM4NzRkODcyZjgiLCJpYXQiOjE2ODIwOTY5Nzd9.sOrrLykOfjlXrHDVKooDus4fun_t3PfqeClfzEB7TXM",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"iphone11\",\r\n    \"description\": \"mobile\",\r\n    \"category\": \"phone\",\r\n    \"price\": 200\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/product/editItems/6442cc87b1d69756de7a9634",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"product",
+								"editItems",
+								"6442cc87b1d69756de7a9634"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete item  by  id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDQyYzMxMjNjM2Y4NjM4NzRkODcyZjgiLCJpYXQiOjE2ODIwOTY5Nzd9.sOrrLykOfjlXrHDVKooDus4fun_t3PfqeClfzEB7TXM",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/product/del/6442cc87b1d69756de7a9634",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"product",
+								"del",
+								"6442cc87b1d69756de7a9634"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete all items",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDQyYzMxMjNjM2Y4NjM4NzRkODcyZjgiLCJpYXQiOjE2ODIwOTY5Nzd9.sOrrLykOfjlXrHDVKooDus4fun_t3PfqeClfzEB7TXM",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/product/delAll",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"product",
+								"delAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "upload image",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDQyYzMxMjNjM2Y4NjM4NzRkODcyZjgiLCJpYXQiOjE2ODIwOTY5Nzd9.sOrrLykOfjlXrHDVKooDus4fun_t3PfqeClfzEB7TXM",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "img",
+									"type": "file",
+									"src": "/C:/Users/Mohamed Mostafa/Desktop/iphone11.jpeg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/product/postImg",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"product",
+								"postImg"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "http://localhost:3000/api/",
+			"type": "string"
+		}
+	]
+}
